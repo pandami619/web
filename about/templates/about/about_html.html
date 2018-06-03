@@ -1,0 +1,40 @@
+{% extends "main/wrapper.html" %}
+
+{% block content %}
+<div class="album py-5">
+    <div class="container">
+      <div class="row">
+        {% for post in object_list %}
+        <div class="col-md-3">
+            {% if post.image != None %}
+            <img class="card-img-top"
+            data-src="holder.js/100px225?theme=thumb&amp;
+            bg=55595c&amp;fg=eceeef&amp;
+            text=Thumbnail" alt="Thumbnail [100%x225]"
+            src="{{post.image.url}}"
+            style="height: 280px; width: 220px; display: block;">
+            {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+<!--
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {% for post in object_list %}
+        {% if post.image != None %}
+            <img class="card-img-top"
+            data-src="holder.js/100px225?theme=thumb&amp;
+            bg=55595c&amp;fg=eceeef&amp;
+            text=Thumbnail" alt="Thumbnail [100%x225]"
+            src="{{post.image.url}}"
+            style="height: 280px; width: 220px; display: block;">
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+-->

@@ -1,0 +1,34 @@
+{% extends "main/wrapper.html" %}
+{% block content %}
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {% for post in object_list %}
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            {% if post.image != None %}
+            <img class="card-img-top"
+            data-src="holder.js/100px225?theme=thumb&amp;
+            bg=55595c&amp;fg=eceeef&amp;
+            text=Thumbnail" alt="Thumbnail [100%x225]"
+            src="{{post.image.url}}"
+            style="height: 225px; width: 100%; display: block;">
+            {% endif %}
+            <div class="card-body">
+              <h2 class="text-info">{{post.title}}</h2>
+              <p class="card-text">{{post.text}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{post.id}}"
+                  class="btn btn-sm btn-outline-secondary">Посмотреть
+                </a>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  {% endfor %}
+</div>
+</div>
+</div>
+{%end block%}
