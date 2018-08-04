@@ -1,40 +1,62 @@
 {% extends "main/wrapper.html" %}
 
 {% block content %}
-<div class="album py-5">
+<main role="main">
     <div class="container">
-      <div class="row">
-        {% for post in object_list %}
-        <div class="col-md-3">
-            {% if post.image != None %}
-            <img class="card-img-top"
-            data-src="holder.js/100px225?theme=thumb&amp;
-            bg=55595c&amp;fg=eceeef&amp;
-            text=Thumbnail" alt="Thumbnail [100%x225]"
-            src="{{post.image.url}}"
-            style="height: 280px; width: 220px; display: block;">
-            {% endif %}
+        <div class="row justify-content-center">
+            <h3 class="col-md-4 display-2 text-center" id="logo-DrG">Dr.Grill</h3>
         </div>
-        {% endfor %}
-      </div>
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <p class="lead font-weight-bold text-center" id="under-logo">
+                    Предлагаем высококачественное оборудование</br>
+                    российского производства
+                </p>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="jumbotron text-center bg-white  " >
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <h4 class="text-center" id="under-logo"><em>-  О НАС  -</em></h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10" id="justify">
+                    <p class="font-weight-light dline sansserif" id='size-text'>
+                        Наша компания занимается производством и продажей оборудования для пищевой промышленности c 2013 года.
+                        Продукция является аналогом турецких электрических аппаратов для шаурмы Inoxan.
+                        Мы являемся единственными сертифицированными производителями спиральных электрических аппаратов для шаурмы в России.
+                        Мы предлагаем своим клиентам только качественную и надежную продукцию, одновременно обеспечивая гарантийное и послегарантийное сервисное обслуживание.
+                        Поддержка наших клиентов в создании и ведении успешного бизнеса в сфере питания.
+                        Гарантировать профессиональное решение задач любой сложности, делая ставку на инновации и передовые технологии.
+                        В условиях постоянного внедрения новых технологий и материалов, квалифицированные менеджеры компании предложат своевременное решение задач, поставленных перед клиентом.
+                        Мы индивидуально подходим к возможностям каждого клиента в отдельности, существует гибкая система скидок.
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="album py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                {% for post in object_list %}
+                {% if post.image != None %}
+                <div class="pricing-header px-3 py-3 pt-md-3 pb-md-4 mx-4 img-shadow">
+                        <a data-fancybox="gallery" href="{{post.image.url}}">
+                            <img class="card-img-top"
+                                 data-src="holder.js/100px225?theme=thumb&amp;
+                                 bg=55595c&amp;fg=eceeef&amp;
+                                 text=Thumbnail" alt="Thumbnail [100%x225]"
+                                 src="{{post.image.url}}"
+                                 id="size-img">
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+</main>
 {% endblock %}
-<!--
-<div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        {% for post in object_list %}
-        {% if post.image != None %}
-            <img class="card-img-top"
-            data-src="holder.js/100px225?theme=thumb&amp;
-            bg=55595c&amp;fg=eceeef&amp;
-            text=Thumbnail" alt="Thumbnail [100%x225]"
-            src="{{post.image.url}}"
-            style="height: 280px; width: 220px; display: block;">
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
--->

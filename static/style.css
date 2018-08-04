@@ -1,0 +1,190 @@
+.descr { visibility: hidden; }
+.b:hover + .descr {
+ visibility: visible;
+}
+
+.mr-left, .mx-auto {
+    margin-left: auto!important;
+}
+
+.navbar-top{
+    min-height: 10px;
+    height: 10px;
+    background-color: #343a40!important;
+    border: none;
+    border-radius: 0;
+}
+
+.navbar-main{
+    background-color: #343a40!important;
+    border: none;
+    border-radius: 0;
+}
+
+.navbar-right{
+    min-height: 10px;
+    height: 20px;
+    background-color: #343a40!important;
+    border: none;
+    border-radius: 0;
+}
+
+.basket-container{
+    position: relative;
+    width: 400px;
+    padding: 15px 10px;
+}
+
+.basket-items{
+    position: absolute;
+    top: 50;
+    width: 100%;
+    background-color: #343a40!important;
+    z-index: 10;
+    padding: 10px;
+}
+
+.form-control {
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .12s ease-in-out;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color:black;
+}
+
+/* photo */
+.img-shadow {
+    text-align:center
+}
+
+.img-shadow img {
+    display: inline-block;
+    margin: 5px;
+    padding: 20px 30px;
+    cursor: pointer;
+    border-radius: 1px;
+    color: white;
+    transition: .3s linear;
+}
+
+.img-shadow img:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    top: -4px;
+    left: -4px;
+}
+   
+/* button */
+.a-shadow {
+    text-align:center
+}
+.a-shadow a {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 5px;
+    cursor: pointer;
+    border: 0.05px rgb(94, 74, 74);
+    transition: .3s linear;
+}
+   
+.a-shadow a:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    top: -4px;
+    left: -4px;
+}
+
+.button-shadow {
+    text-align:center
+}
+.button-shadow button {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 5px;
+    cursor: pointer;
+    border: 0.05px rgb(94, 74, 74);
+    transition: .3s linear;
+}
+   
+.button-shadow button:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    top: -4px;
+    left: -4px;
+}
+
+/* Адаптация */
+
+@media (min-width: 1068px) and (max-width: 1600px){
+    /**/
+    img#size-img {
+        height: 280px;
+        width: 220px; 
+        border: 0.5px solid rgb(94, 74, 74);
+        border-radius: 5px;
+        padding: 1px;
+    }
+
+    img#size-novelties{
+        height: 280px;
+        width: 220px;   
+    }
+
+    #logo-DrG{
+        font-size: 57px;
+    }
+
+    #under-logo{
+        font-size: 17px;
+    }
+
+    #center{
+        text-align: center; 
+    }
+
+    #justify{
+        text-align: justify;
+    }
+
+    #size-text{
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 0px;
+        padding-left: 20px;
+        line-height: 30px;
+        font-size: 15px; 
+    }
+
+    /* novelties */
+
+    #novelt-text{
+        font-size: 15px;
+    }
+/*
+    body {
+        margin: 0;
+        background:url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
+      }
+*/   
+
+
+     /* production */
+
+     .display-4{
+            font-size: 3.0rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+}

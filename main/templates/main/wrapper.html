@@ -1,32 +1,92 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-    <title>Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous"/>
+    <!--custom style-->
+    {% load staticfiles %}
+    <link rel="stylesheet" media='all' href="{% static 'style.css' %}">
+    <title>Dr.Grill Store</title>
   </head>
   <body>
     <header>
-      <div class="navbar navbar-dark bg-dark">
-          <h4 class="my-0 mr-md-aut font-weight-normal text-light">Dr.Grill</h4>
-          <nav class="my-2 my-md-0 mr-md-3">
-                <a class="navbar-brand mr-auto mr-lg-0 p-2 text-light btn " href="/"><small>Главная</small></a>
-                <a class="navbar-brand mr-auto mr-lg-0 text-light btn my-2" href="/about-us"><small>О нас</small></a>
-                <a class="navbar-brand mr-auto mr-lg-0 text-light btn my-2" href="/production"><small>Продукция</small></a>
-                <a class="navbar-brand mr-auto mr-lg-0 text-light btn my-2" href="/contact"><small>Контакты</small></a>
-            </nav>
-            </div>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+          <a class="navbar-brand" href="/">Dr.Grill</a>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Главная<span class="sr-only">(<!--  -->urrent)</span></a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="/about-us">О нас</a>
+                </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/production">Продукция</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link link" href="/contact">Контакты</a>
+              </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+              <li>
+                <div class="basket-container">
+                    <a class="p-2 text-white" href="">
+                      Корзина
+                        <span id="basket_total_amount"></span><span id="basket_total_nmb">
+                          {% if products_total_nmb %}
+                              ({{ products_total_nmb}})
+                          {% else %}
+                              (0)
+                          {% endif %}
+                        </span>
+                    </a>
+                    <div class="basket-items descr">
+                      <ul class="">
+                        {% for product_in_basket in products_in_basket %}
+                        <li class="text-white">
+                          {{ product_in_basket.product.title }} {{ product_in_basket.nmb }} шт.
+                          по {{ product_in_basket.price_pre_item }} руб за шт.
+                          <a class='delete-item' href="" data-product_id='{{ product_in_basket.id }}'>x</a>
+                        </li>
+                        {% endfor %}
+                        <li>
+                          <a href="{% url 'checkout'  %}">
+                            Оформить заказ
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+              </li>
+            </form>
+          </div>
+        </nav>
     </header>
     {%block content%}
-		{%endblock%}
+    {%endblock%}
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous">
+
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous">
+
+    </script>
+  <script type="text/javascript" src ="{% static 'js/scripts.js' %}"></script>
   </body>
 </html>

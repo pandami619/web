@@ -1,57 +1,73 @@
 {% extends "main/wrapper.html" %}
 {% block content %}
 <main role="main">
-      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="mbr-title pt-2 mbr-fonts-style display-3">Dr.Grill</h1>
-            <p class="lead font-weight-bold text-center">Мы продаем профессиональные аппараты-грили</br>
-              для приготовления шавермы по доступной цене
-            </p>
-          </div>
-        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-              <h4><strong>Оборудование для профессиональной кухни!</strong></h4>
-              <ul class="list-unstyled lead">
-                Специализация бренда Dr.Grill - высококачественные профессиональные аппараты</br> грили для приготовления шавермы по доступной цене.
-                Покупая грили под маркой Dr.Grill,</br> вы можете быть уверены в том, что приобретаете продукцию, отвечающую всем</br>
-                современным требованиям рынка.
-                </ul>
+    <div class="container">
+        <div class="row justify-content-center">
+            <h3 class="col-md-4 display-2 text-center" id="logo-DrG">Dr.Grill</h3>
         </div>
-      <div class="album py-5">
-          <div class="container">
-            <div class="row">
-              {% for post in object_list %}
-              <div class="col-md-4">
-                <!-- расстояние уменьшить между продукцией -->
-                <div class="card mb-4 box-shadow"
-                style="height: 460px; width: 295px;">
-                  {% if post.image != None %}
-                  <img class="card-img-top"
-                  data-src="holder.js/100px225?theme=thumb&amp;
-                  bg=55595c&amp;fg=eceeef&amp;
-                  text=Thumbnail" alt="Thumbnail [100%x225]"
-                  src="{{post.image.url}}"
-                  style="height: 280px; width: 220px; display: block;">
-                  {% endif %}
-                  <div class="card-body">
-                    <h4 class="font-weight-normal">{{post.title}}</h4>
-                    <h5 class="card-title pricing-card-title">
-                      {{post.price}}
-                    </h5>
-                    <p class="list-unstyled">{{post.text}}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <a href="production/{{post.id}}"
-                        class="btn btn-sm btn-outline-secondary">Посмотреть
-                      </a>
-                     </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <p class="lead font-weight-bold text-center" id="under-logo">
+                    Мы продаем профессиональные аппараты-грили<br>
+                    для приготовления шавермы по доступной цене
+                </p>
             </div>
-          </div>
         </div>
-    </main>
+    </div>
+    <div class="jumbotron text-center bg-white" >
+        <div class="container">
+            <div class="row justify-content-center">
+                <h4 class="col-8 text-center" id="under-logo">Оборудование для профессиональной кухни!</h4>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-10" id="justify">
+                    <p class="font-weight-light dline sansserif" id='size-text'>
+                        Специализация бренда Dr.Grill - высококачественные профессиональные аппараты грили для приготовления шавермы по доступной цене.
+                        Покупая грили под маркой Dr.Grill, вы можете быть уверены в том, что приобретаете продукцию, отвечающую всем
+                        современным требованиям рынка.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="album py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                {% for post in object_list %}
+                <div class="pricing-header pt-md-4 pb-md-4 mx-auto">
+                    <div class="card-header bg-danger">
+                        <h4 class="my-0 font-weight-normal text-light text-center" id="novelt-text">Новинка</h4>
+                    </div>
+                    <div class="pb-md-4 img-shadow">
+                        {% if post.image != None %}
+                        <a data-fancybox="gallery" href="{{post.image.url}}">
+                            <img class="card-img-top"
+                            data-src="holder.js/100px225?theme=thumb&amp; bg=55595c&amp; fg=eceeef&amp; text=Thumbnail"
+                            alt="Thumbnail [100%x225]"
+                            src="{{post.image.url}}"
+                            id="size-novelties">
+                        </a>
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="font-weight-normal">{{post.title}}</p>
+                                <p class="text-muted">{{post.price}}</p>
+                            </div>
+                            <p class="card-text">{{post.text}}</p>
+                            <div class="justify-content-between align-items-center a-shadow">
+                                <a href="production/{{post.id}}"
+                                class="btn btn-light">
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</main>
 {% endblock %}
 
-<!-- <h1 class="display-4">Dr.Grill</h1> -->
+<!--добавить "новинки 74х74"-->

@@ -1,59 +1,74 @@
 {% extends "main/wrapper.html" %}
 {% block content %}
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-3">Dr.Grill</h1>
-      <p class="lead font-weight-bold text-center">
-        Предлагаем высококачественное оборудование</br>российского производства
-      </p>
-</div>
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <p><em>-  ПОКУПАЙТЕ У НАС  -</em></p>
-      <h3><strong>Описание</strong></h3>
-      <p>
-        Аппарат для шаурмы - приготовление нарезки выполняется по средствам 2-х  (3-х)</br>
-        электронагревательных элементов, механизм изменения нагрева,</br>
-        представлен,термостойкими выключателями. Изделие изготовлено из пищевой</br>
-        нержавеющей стали. Шампур имеет регулировку высоты под мясо до 480 (780) мм и</br>
-        регулировку расстояния до нагревательных спиралей. Средние и Большие габариты,<br>
-        непревзойдённый потенциал - идеальное решение выдерживающее большой наплыв</br>
-        количества посетителей</p>
-</div>
-    <main role="main">
-          <div class="album py-5">
-              <div class="container">
-                <div class="row">
-                  {% for post in object_list %}
-                  <div class="col-md-4">
-                    <div class="card mb-4 box-shadow"
-                    style="height: 460px; width: 295px;">
-                      {% if post.image != None %}
-                      <img class="card-img-top"
-                      data-src="holder.js/100px225?theme=thumb&amp;
-                      bg=55595c&amp;fg=eceeef&amp;
-                      text=Thumbnail" alt="Thumbnail [100%x225]"
-                      src="{{post.image.url}}"
-                      style="height: 280px; width: 220px; display: block;">
-                      {% endif %}
-                      <div class="card-body">
-                        <h4 class="font-weight-normal">{{post.title}}</h4>
-                        <h5 class="card-title pricing-card-title">
-                          {{post.price}}
-                        </h5>
-                        <p class="list-unstyled">{{post.text}}</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                            <a href="{{post.id}}"
-                            class="btn btn-sm btn-outline-secondary">Посмотреть
-                          </a>
-                         </div>
+<main role="main">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h3 class="col-md-4 display-2 text-center" id="logo-DrG">Dr.Grill</h3>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <p class="lead font-weight-bold text-center" id="under-logo">
+                    Предлагаем высококачественное оборудование</br>
+                    российского производства
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron text-center bg-white" >
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <h4 class="text-center" id="under-logo"><em>-  ПОКУПАЙТЕ У НАС  -</em></h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-10" id="justify">
+                    <p class="font-weight-light dline" id='size-text'>
+                        Аппарат для шаурмы - приготовление нарезки выполняется по средствам 2-х  (3-х)
+                        электронагревательных элементов, механизм изменения нагрева,
+                        представлен,термостойкими выключателями. Изделие изготовлено из пищевой
+                        нержавеющей стали. Шампур имеет регулировку высоты под мясо до 480 (780) мм и
+                        регулировку расстояния до нагревательных спиралей. Средние и Большие габариты,
+                        непревзойдённый потенциал - идеальное решение выдерживающее большой наплыв
+                        количества посетителей
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="album py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                {% for post in object_list %}
+                <div class="pricing-header pt-md-4 pb-md-4 mx-auto">
+                    <div class="pb-md-4 img-shadow">
+                        {% if post.image != None %}
+                        <a data-fancybox="gallery" href="{{post.image.url}}">
+                            <img class="card-img-top"
+                            data-src="holder.js/100px225?theme=thumb&amp; bg=55595c&amp; fg=eceeef&amp; text=Thumbnail"
+                            alt="Thumbnail [100%x225]"
+                            src="{{post.image.url}}"
+                            id="size-novelties">
+                        </a>
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="font-weight-normal">{{post.product.title}}</p>
+                                <p class="text-muted">{{post.product.price}}</p>
+                            </div>
+                            <p class="card-text">{{post.product.text}}</p>
+                            <div class="justify-content-between align-items-center a-shadow">
+                                <a href="{% url 'product' post.product.id %}"
+                                class="btn btn-light">
+                                Посмотреть
+                            </a>
                         </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
+            </div>
             {% endfor %}
         </div>
-      </div>
     </div>
-    </main>
-
+    </div>
+</main>
 {% endblock %}
