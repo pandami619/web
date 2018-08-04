@@ -2,7 +2,7 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from production.models import Production
-from utils.main import @disable_for_loaddata
+from utils.main import disable_for_loaddata
 
 
 # Create your models here.
@@ -70,6 +70,7 @@ class ProductionInOrder(models.Model):
         super(ProductionInOrder, self).save(*args, **kwargs)
 
 
+#@disable_for_loaddata
 def product_in_order_post_save(sender, instance, created, **kwargs):
     order = instance.order
     all_products_in_order = ProductionInOrder.objects.filter(order=order, is_active=True)
