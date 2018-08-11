@@ -125,6 +125,15 @@ p {
     left: -4px;
 }
 
+
+.card-img-top{
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.card-body{
+    /*border: 1px solid rgba(0,0,0,.125);*/
+}
+
 /* Адаптация */
 
 @media (min-width: 1068px) and (max-width: 1600px){
