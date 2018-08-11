@@ -25,8 +25,8 @@ SECRET_KEY = '+xqx)cteelw0jqt0i=e@cfan3sm9nuct*)mx0%4dgv1()x&ypo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['drgrill.spb.ru', '178.128.245.7', localhost]
+ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['drgrill.spb.ru', '178.128.245.7', localhost]
 
 
 # Application definition
