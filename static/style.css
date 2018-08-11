@@ -37,11 +37,11 @@
 
 .basket-items{
     position: absolute;
-    top: 50;
-    width: 100%;
+    top: 46px;
+    width: 80%;
     background-color: #343a40!important;
     z-index: 10;
-    padding: 10px;
+    padding: 16px 0px;
 }
 
 .form-control {

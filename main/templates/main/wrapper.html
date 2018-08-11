@@ -22,21 +22,12 @@
           </button>
           <div class="navbar-collapse collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="/">Главная<span class="sr-only">(<!--  -->urrent)</span></a>
-              </li>
-              <li class="nav-item active">
-                  <a class="nav-link" href="/about-us">О нас</a>
-                </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/production">Продукция</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link link" href="/contact">Контакты</a>
-              </li>
+              <a class="nav-link text-white" href="/">Главная</a>
+              <a class="nav-link text-white" href="/about-us">О нас</a>
+              <a class="nav-link text-white" href="/production">Продукция</a>
+              <a class="nav-link text-white" href="/contact">Контакты</a>
             </ul>
             <form class="form-inline mt-2 mt-md-0">
-              <li>
                 <div class="basket-container">
                     <a class="p-2 text-white" href="">
                       Корзина
@@ -51,21 +42,15 @@
                     <div class="basket-items descr">
                       <ul class="">
                         {% for product_in_basket in products_in_basket %}
-                        <li class="text-white">
+                        <a class="text-white" href="{% url 'checkout'  %}">
                           {{ product_in_basket.product.title }} {{ product_in_basket.nmb }} шт.
                           по {{ product_in_basket.price_pre_item }} руб за шт.
-                          <a class='delete-item' href="" data-product_id='{{ product_in_basket.id }}'>x</a>
-                        </li>
+                          <a class='delete-item' href="" data-product_id='{{ product_in_basket.id }}'>X</a>
+                        </a>
                         {% endfor %}
-                        <li>
-                          <a href="{% url 'checkout'  %}">
-                            Оформить заказ
-                          </a>
-                        </li>
                       </ul>
                     </div>
                   </div>
-              </li>
             </form>
           </div>
         </nav>
