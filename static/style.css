@@ -30,18 +30,31 @@
 }
 
 .basket-container{
+    /*
     position: relative;
     width: 400px;
     padding: 15px 10px;
+    */
+    position: relative;
+    width: 100px;
+    padding: 6px 0px;
 }
 
 .basket-items{
-    position: absolute;
+    /*position: absolute;
     top: 46px;
     width: 80%;
     background-color: #343a40!important;
     z-index: 10;
     padding: 16px 0px;
+    */
+    position: absolute;
+    right: -67px;
+    top: 36px;
+    width: 319%;
+    background-color: #343a40!important;
+    z-index: 10;
+    padding: 15px 0px;
 }
 
 .form-control {
