@@ -100,6 +100,13 @@ p {
     top: -4px;
     left: -4px;
 }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
    
 /* button */
 .a-shadow {
@@ -145,6 +152,20 @@ p {
 
 .card-body{
     /*border: 1px solid rgba(0,0,0,.125);*/
+}
+
+/* background*/
+
+body {
+    margin: 0;
+    background: url(../media/Grilovani_2.png);
+    background-size: cover; /* Масштабируем фон */
+}
+
+.background {
+    height: 200px;
+    width: 200px;   
+    background: url(../media/Grilovani_2.png);
 }
 
 /* Адаптация */
@@ -194,13 +215,6 @@ p {
     #novelt-text{
         font-size: 15px;
     }
-/*
-    body {
-        margin: 0;
-        background:url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
-      }
-*/   
-
 
      /* production */
 
