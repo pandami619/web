@@ -31,7 +31,7 @@ $(document).ready(function(){
 					console.log(data.products);
 					$('.basket-items ul').html("");
 					$.each(data.products, function(k, v){
-						$('.basket-items ul').append('<a class="text-white" href=' + '"{% url' + "'checkout'" +  '%}">' +v.name +' ' + v.nmb +
+						$('.basket-items ul').append('<a class="text-white" href=' + '"/checkout">' +v.name +' ' + v.nmb +
 				    		' шт. ' + 'по ' + v.price_pre_item + ' руб за шт. ' +  '<a class="delete-item" href="" data-product_id="' + v.id +
 				    		 '">x</a>' + 	'</a>');
 					});
