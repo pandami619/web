@@ -1,29 +1,20 @@
 {% extends "main/wrapper.html" %}
 {% block content %}
 <main role="main">
-    <div class="container">
-        <div class="row justify-content-center">
-            <h3 class="col-md-4 display-2 text-center" id="logo-DrG">Dr.Grill</h3>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <p class="lead font-weight-bold text-center" id="under-logo">
-                    Предлагаем высококачественное оборудование</br>
-                    российского производства
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="jumbotron text-center bg-white" >
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-4">
-                    <h4 class="text-center" id="under-logo"><em>-  ПОКУПАЙТЕ У НАС  -</em></h4>
-                </div>
+    <div class="background-photo">
+        <div class="container  div-height">
+            <div class="col-md-5 p-lg-5 mx-auto my-5">
+                <img class="center" width="300px" src='../../media/logo_dr_grill_1k.png' />
             </div>
             <div class="row justify-content-center">
-                <div class="col-10" id="justify">
-                    <p class="font-weight-light dline" id='size-text'>
+                <h5 class="font-weight-normal text-center text-white" id='under-logo-product'>
+                Предлагаем высококачественное оборудование</br>
+                российского производства
+                </h5>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-8" id="justify">
+                    <p class="font-weight-lighter dline sansserif text-white" id='size-text'>
                         Аппарат для шаурмы - приготовление нарезки выполняется по средствам 2-х  (3-х)
                         электронагревательных элементов, механизм изменения нагрева,
                         представлен,термостойкими выключателями. Изделие изготовлено из пищевой
@@ -36,12 +27,12 @@
             </div>
         </div>
     </div>
-    <div class="album py-5">
+    <div class="album py-5 background-product">
         <div class="container">
             <div class="row justify-content-center">
                 {% for post in object_list %}
-                <div class="pricing-header pt-md-4 pb-md-4 mx-auto">
-                    <div class="pb-md-4 img-shadow">
+                <div class="col-md-4">
+                    <div class="card pb-md-4 img-shadow">
                         {% if post.image != None %}
                         <a data-fancybox="gallery" href="{{post.image.url}}">
                             <img class="card-img-top"
@@ -52,17 +43,21 @@
                         </a>
                         {% endif %}
                         <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <p class="font-weight-normal">{{post.product.title}}</p>
-                                <p class="text-muted">{{post.product.price}}</p>
-                            </div>
+                            <p class="card-text">
+                              {{post.product.title}}
+                            </p>
                             <p class="card-text">{{post.product.text}}</p>
-                            <div class="justify-content-between align-items-center a-shadow">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
                                 <a href="{% url 'product' post.product.id %}"
-                                class="btn btn-light">
+                                class="btn btn-primary my-2">
                                 Посмотреть
                             </a>
+                                </div>
+                                 <p class="text-right">{{post.product.price}}</p>
                         </div>
+
+                    </div>
                     </div>
                 </div>
             </div>

@@ -52,7 +52,7 @@
     right: -67px;
     top: 36px;
     width: 319%;
-    background-color: #343a40!important;
+    background-color: black;
     z-index: 10;
     padding: 15px 0px;
 }
@@ -80,6 +80,15 @@ p {
     color:black;
 }
 
+/* href */
+#href-phone{
+    padding-top: 15px;
+}
+
+#href-email{
+    padding-top: 15px;
+}
+
 /* photo */
 .img-shadow {
     text-align:center
@@ -99,6 +108,22 @@ p {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     top: -4px;
     left: -4px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 72%;
+    padding-top: 0px;
+}
+
+.center-contact {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    padding-top: 0px;
 }
    
 /* button */
@@ -147,6 +172,41 @@ p {
     /*border: 1px solid rgba(0,0,0,.125);*/
 }
 
+/* background*/
+
+.background-photo {
+    background: url(../media/Grilovani_2.png);
+        /*background-attachment: fixed;*/
+    	background-size: cover;
+    	background-repeat: no-repeat;
+    	background-position: center center;
+    	background-size: cover;
+    	padding-top: 1%;
+}
+
+.background-product{
+     background-color: #efefef;
+}
+
+.background-contact{
+     background-color: rgb(40, 39, 39);
+}
+
+.background-navbar {
+       background-color: black;
+     /*background-color: #1c1300;*/
+     /*background-color: #1e1500;*/
+}
+
+body {
+      background-color: rgb(40, 39, 39);
+}
+
+/* blok */
+.div-height{
+    height: 600px;
+}
+
 /* Адаптация */
 
 @media (min-width: 1068px) and (max-width: 1600px){
@@ -168,8 +228,16 @@ p {
         font-size: 57px;
     }
 
-    #under-logo{
-        font-size: 17px;
+    #under-logo-main{
+        padding-top: 88px;
+    }
+
+    #under-logo-product{
+        padding-top: 30px;
+    }
+
+    #under-logo-contact{
+        padding-top: 30px;
     }
 
     #center{
@@ -181,12 +249,12 @@ p {
     }
 
     #size-text{
-        padding-top: 20px;
-        padding-right: 20px;
-        padding-bottom: 0px;
-        padding-left: 20px;
-        line-height: 30px;
-        font-size: 15px; 
+    padding-top: 7px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    line-height: 17px;
+    font-size: 14px;
     }
 
     /* novelties */
@@ -194,13 +262,6 @@ p {
     #novelt-text{
         font-size: 15px;
     }
-/*
-    body {
-        margin: 0;
-        background:url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
-      }
-*/   
-
 
      /* production */
 
