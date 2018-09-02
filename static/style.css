@@ -30,18 +30,31 @@
 }
 
 .basket-container{
+    /*
     position: relative;
     width: 400px;
     padding: 15px 10px;
+    */
+    position: relative;
+    width: 100px;
+    padding: 6px 0px;
 }
 
 .basket-items{
-    position: absolute;
-    top: 50;
-    width: 100%;
+    /*position: absolute;
+    top: 46px;
+    width: 80%;
     background-color: #343a40!important;
     z-index: 10;
-    padding: 10px;
+    padding: 16px 0px;
+    */
+    position: absolute;
+    right: -67px;
+    top: 36px;
+    width: 319%;
+    background-color: #343a40!important;
+    z-index: 10;
+    padding: 15px 0px;
 }
 
 .form-control {
@@ -123,6 +136,15 @@ p {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     top: -4px;
     left: -4px;
+}
+
+
+.card-img-top{
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.card-body{
+    /*border: 1px solid rgba(0,0,0,.125);*/
 }
 
 /* Адаптация */
