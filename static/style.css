@@ -52,7 +52,7 @@
     right: -67px;
     top: 36px;
     width: 319%;
-    background-color: #343a40!important;
+    background-color: black;
     z-index: 10;
     padding: 15px 0px;
 }
@@ -156,16 +156,34 @@ p {
 
 /* background*/
 
-body {
-    margin: 0;
+.background-photo {
     background: url(../media/Grilovani_2.png);
-    background-size: cover; /* Масштабируем фон */
+        /*background-attachment: fixed;*/
+    	background-size: cover;
+    	background-repeat: no-repeat;
+    	background-position: center center;
+    	background-size: cover;
+
+
 }
 
-.background {
-    height: 200px;
-    width: 200px;   
-    background: url(../media/Grilovani_2.png);
+.background-product{
+     background-color: white;
+}
+
+.background-navbar {
+       background-color: black;
+     /*background-color: #1c1300;*/
+     /*background-color: #1e1500;*/
+}
+
+body {
+      background-color: black;
+}
+
+/* blok */
+.div-height{
+    height: 700px;
 }
 
 /* Адаптация */
